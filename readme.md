@@ -33,4 +33,4 @@ $urlBuilder
     ->setCrop('north');        
 ``` 
 
-See [Barnebys Image Processor](https://github.com/barnebys/bimp) documentation for available crop gravities & strategies.  
+See [Barnebys Image Processor](https://github.com/barnebys/bimp) for documentation for available crop gravities & strategies.  
