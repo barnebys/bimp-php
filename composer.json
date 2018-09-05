@@ -1,0 +1,30 @@
+{
+  "name": "barnebys/bimp-php",
+  "description": "Barnebys Image Processor PHP Client",
+  "type": "library",
+  "keywords": [
+    "barnebys",
+    "auctions",
+    "image"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johan Dahl",
+      "email": "johan.dahl@barnebys.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Barnebys\\ImageProcessor\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Barnebys\\Tests\\": "tests/src"
+    }
+  }
+}
