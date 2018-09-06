@@ -67,7 +67,7 @@ class UrlTest extends TestCase
     {
 
         $urlBuilder = $this->urlBuilder = new UrlBuilder('image.barnebys.sh');
-        $urlBuilder->setPath('test/123/456');
+        $urlBuilder->setPath('/test/123/456');
 
 
         $url = (string) $urlBuilder;

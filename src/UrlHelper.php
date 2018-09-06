@@ -27,7 +27,7 @@ final class UrlHelper
             return urlencode($this->path);
         }
 
-        return $this->path;
+        return ltrim($this->path, "/");
     }
 
     private function getQuery()
