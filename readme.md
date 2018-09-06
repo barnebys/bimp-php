@@ -20,14 +20,14 @@ $url = $urlBuilder->createURL();
 ## Crop image
 
 ```
-$urlBuilder = new UrlBuilder('analytics.barnebys.sh', 'test');
+$urlBuilder = new UrlBuilder('bimp.yourdomain.com', 'test');
 $urlBuilder->setSize(200,200);        
 ``` 
 
 ## Crop image and set gravity
 
 ```
-$urlBuilder = new UrlBuilder('analytics.barnebys.sh', 'test');
+$urlBuilder = new UrlBuilder('bimp.yourdomain.com', 'test');
 $urlBuilder
     ->setSize(200,200)
     ->setCrop('north');        
