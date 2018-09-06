@@ -21,17 +21,24 @@ final class UrlHelper
         $this->secret = $secret;
     }
 
+    private function getPath()
+    {
+        if(filter_var($this->path, FILTER_VALIDATE_URL)) {
+            return urlencode($this->path);
+        }
+
+        return $this->path;
+    }
+
     private function getQuery()
     {
-        $query = '/' . urlencode($this->path);
+        $query = '/' . $this->getPath();
 
         if (count($this->params) > 0) {
             $query .= '?' . http_build_query($this->params);
         }
 
         $signed = "s=" . md5($this->secret . $query);
-
-
 
         return $query .  (empty($this->secret) ? "" : (count($this->params) > 0 ? '&' : '?') . $signed);
     }
