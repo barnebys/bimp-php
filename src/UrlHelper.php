@@ -14,7 +14,7 @@ final class UrlHelper
     private $params;
     private $secret;
 
-    public function __construct($path, $params, $secret)
+    public function __construct($path, $params, $secret = null)
     {
         $this->path = $path;
         $this->params = $params;
@@ -29,8 +29,11 @@ final class UrlHelper
             $query .= '?' . http_build_query($this->params);
         }
 
+        $signed = "s=" . md5($this->secret . $query);
 
-        return $query . (count($this->params) > 0 ? '&' : '?') . "s=" . md5($this->secret . $query);
+
+
+        return $query .  (empty($this->secret) ? "" : (count($this->params) > 0 ? '&' : '?') . $signed);
     }
 
     public function __toString()

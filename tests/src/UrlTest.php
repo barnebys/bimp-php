@@ -47,5 +47,20 @@ class UrlTest extends TestCase
         $this->assertEquals($expected, $url);
     }
 
+    public function testUnsignedURL()
+    {
+
+        $urlBuilder = $this->urlBuilder = new UrlBuilder('image.barnebys.sh');
+        $urlBuilder
+                ->setHeight(200)
+                ->setWidth(200)
+                ->setPath('https://dummyimage.com/600x400/000/fff');
+
+
+        $url = $urlBuilder->createURL();
+        $expected = 'https://image.barnebys.sh/https%3A%2F%2Fdummyimage.com%2F600x400%2F000%2Ffff?h=200&w=200';
+
+        $this->assertEquals($expected, $url);
+    }
 
 }

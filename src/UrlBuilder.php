@@ -18,7 +18,7 @@ final class UrlBuilder
 
     private $params = [];
 
-    public function __construct($domain, $secret)
+    public function __construct($domain, $secret = null)
     {
         $this->domain = $domain;
         $this->secret = $secret;
