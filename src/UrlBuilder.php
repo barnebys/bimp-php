@@ -93,11 +93,23 @@ final class UrlBuilder
         return $this;
     }
 
+    public function setFormat($format)
+    {
+        $this->params['format'] = $format;
+
+        return $this;
+    }
+
     public function createURL()
     {
         $query = new UrlHelper($this->path, $this->params, $this->secret);
 
         return 'https://' . $this->domain . $query;
+    }
+
+    public function __toString()
+    {
+        return $this->createURL();
     }
 
 }

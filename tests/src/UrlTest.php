@@ -63,4 +63,17 @@ class UrlTest extends TestCase
         $this->assertEquals($expected, $url);
     }
 
+    public function testToString()
+    {
+
+        $urlBuilder = $this->urlBuilder = new UrlBuilder('image.barnebys.sh');
+        $urlBuilder->setPath('https://dummyimage.com/600x400/000/fff');
+
+
+        $url = (string) $urlBuilder;
+        $expected = 'https://image.barnebys.sh/https%3A%2F%2Fdummyimage.com%2F600x400%2F000%2Ffff';
+
+        $this->assertEquals($expected, $url);
+    }
+
 }
