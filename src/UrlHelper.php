@@ -24,7 +24,7 @@ final class UrlHelper
     private function getPath()
     {
         if(filter_var($this->path, FILTER_VALIDATE_URL)) {
-            return urlencode($this->path);
+            return rawurlencode($this->path);
         }
 
         return ltrim($this->path, "/");
